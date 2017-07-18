@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use Laravel\Socialite\Facades\Socialite;
+use App\UserService;
 
 class GoogleController extends Controller
 {
@@ -21,6 +22,7 @@ class GoogleController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver("google")->stateless()->user();
-        dd($user);
+
+        redirect()->route("home");
     }
 }
