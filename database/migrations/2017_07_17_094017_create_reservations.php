@@ -17,8 +17,8 @@ class CreateReservations extends Migration
             $table->increments("rid");
             $table->string("gym");
             $table->tinyInteger("court_number");
-            $table->dateTime("rdate");
-            $table->json("participants");
+            $table->date("rdate");
+            $table->text("participants")->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

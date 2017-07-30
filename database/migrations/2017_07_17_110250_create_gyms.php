@@ -20,7 +20,7 @@ class CreateGyms extends Migration
             $table->string("street");
             $table->string("zip_code");
             $table->string("number");
-            $table->json("discount_type")->comment("for example: Sport card or All You Can Move etc");
+            $table->text("discount_type")->comment("for example: Sport card or All You Can Move etc");
             $table->tinyInteger("number_of_courts");
             $table->timestamps();
             $table->softDeletes();
