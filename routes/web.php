@@ -18,3 +18,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('auth/google', 'GoogleController@redirectToProvider')->name('google.login');
 Route::get('auth/google/callback', 'GoogleController@handleProviderCallback');
+
+Route::get('/booking', 'Booking\BookingController@book')->name('booking');
+
+Route::get('/gyms', 'Gym\GymController@index')->name('gyms');
+Route::get('/gyms/create', 'Gym\GymController@create')->name('create-gyms');
+Route::post('/gyms/save', 'Gym\GymController@save')->name('save-gyms');
