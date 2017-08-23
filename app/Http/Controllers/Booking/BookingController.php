@@ -11,6 +11,11 @@ use App\Http\Requests\BookingRequest;
 class BookingController extends Controller
 {
 
+    public function __contruct()
+    {
+        $this->middleware('auth');
+    }
+
     public function book()
     {
         $data = BookingService::getDatasToReservationForm();

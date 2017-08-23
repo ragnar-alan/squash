@@ -14,11 +14,11 @@ class CreateSeasonTicket extends Migration
     public function up()
     {
         Schema::create("season_tickets", function(Blueprint $table){
-            $table->increments("tid");
+            $table->increments("tid")->unsigned();
             $table->string("gym");
             $table->dateTime("valid_from");
             $table->dateTime("valid_to");
-            $table->tinyInteger("occasions_left")->unsigned();
+            $table->tinyInteger("occasions")->unsigned();
             $table->string("ticket_name")->nullable();
             $table->integer("full_price");
             $table->timestamps();

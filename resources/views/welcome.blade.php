@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>STM</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -30,13 +30,7 @@
                 </div>
 
                 @if (Auth::check())
-                    <div class="links">
-                        <a href="{{ route('booking') }}">Foglalás</a>
-                        <a href="https://laracasts.com">Előzmények</a>
-                        <a href="https://laravel-news.com">Termek</a>
-                        <a href="https://forge.laravel.com">Hírek</a>
-                        <a href="https://github.com/laravel/laravel">Beállítások</a>
-                    </div>
+                    @include("layouts.navigation")
                 @endif
             </div>
         </div>

@@ -1,5 +1,4 @@
 @extends("layouts.app")
-@section("stylesheets")
 @section("content")
     <div class="container">
         <div class="row">
@@ -7,11 +6,6 @@
                 <div class="panel panel-default">
                     <div class="panel-heading clearfix">
                         <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Foglalás</h4>
-                        <div class="input-group pull-right">
-                            <a href="{{ route('list-bookings') }}" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Foglalások listázása">
-                                <i class="glyphicon glyphicon-list"></i>
-                            </a>
-                        </div>
                     </div>
                     <div class="panel-body">
                     <form action="{{ route("store-booking") }}" method="post">
