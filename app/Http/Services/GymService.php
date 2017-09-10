@@ -29,4 +29,25 @@ class GymService
         $gym->discount_type = $request->discount;
         $gym->save();
     }
+
+    public static function getGym($gid)
+    {
+        return Gyms::whereNull('deleted_at')
+            ->where('gid',$gid)
+            ->first();
+    }
+
+    public static function updateGym($gym)
+    {
+        $oriGym = Gyms::where('gid',$gym->gid)->first();
+
+        $oriGym->gym_name = $gym->name;
+        $oriGym->city = $gym->city;
+        $oriGym->zip_code = $gym->zipcode;
+        $oriGym->street = $gym->street;
+        $oriGym->number = $gym->number;
+        $oriGym->number_of_courts = $gym->courts;
+        $oriGym->discount_type = $gym->discount;
+        return $oriGym->save();
+    }
 }

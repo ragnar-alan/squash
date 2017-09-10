@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
+    @yield('header')
 </head>
 <body>
     <div id="app">
@@ -83,6 +85,8 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/moment.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('footer')
 </body>
 </html>

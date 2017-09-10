@@ -22,6 +22,7 @@
                                 <th>Pályák száma</th>
                                 <th>Kedvezmény típusa/i</th>
                                 <th>Létrehozva</th>
+                                <th>Műveletek</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -32,6 +33,11 @@
                                         <td>{{ $gym->number_of_courts }}</td>
                                         <td>{{ $gym->discount_type }}</td>
                                         <td>{{ $gym->created_at->format("Y-m-d H:i") }}</td>
+                                        <td>
+                                            <a href="{{ route('edit-gyms', $gym->gid) }}" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Terem hozzáadása">
+                                                <i class="glyphicon glyphicon-pencil"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
