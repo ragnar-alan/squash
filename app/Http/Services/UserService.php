@@ -3,6 +3,7 @@ namespace  App\Http\Services;
 
 use App\Http\Models\Users;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class UserService
 {
@@ -15,5 +16,9 @@ class UserService
     public function getUser($email)
     {
         return Users::where("email", $email)->first();
+    }
+
+    public static function getUsers() {
+        return Users::active()->get();
     }
 }

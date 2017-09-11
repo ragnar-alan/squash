@@ -5,8 +5,24 @@ namespace App\Http\Controllers\Booking;
 use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
-use App\Http\Services\BookingService;
+<<<<<<< HEAD
+use App\Http\Services\GymService;
 use stdClass;
+
+class BookingController extends Controller
+{
+    public function book()
+    {
+        $data = new stdClass();
+        $data->gyms = GymService::getGymList();
+        return view('booking.book')->with("data", $data);
+    }
+
+    public function store(Request $request)
+    {
+//        $appointments = AppointmentService::getAppointments();
+=======
+use App\Http\Services\BookingService;
 use App\Http\Requests\BookingRequest;
 
 class BookingController extends Controller
@@ -16,6 +32,7 @@ class BookingController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function book()
     {
         $data = BookingService::getDatasToReservationForm();
@@ -35,5 +52,6 @@ class BookingController extends Controller
     public function list() {
         $data = BookingService::getReservations();
         return view("booking.book-list")->with("datas", $data);
+>>>>>>> 9cf9e1281a0b255de38bed5d378e686d17c43912
     }
 }

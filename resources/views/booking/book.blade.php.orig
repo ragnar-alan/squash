@@ -8,6 +8,21 @@
                         <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Foglalás</h4>
                     </div>
                     <div class="panel-body">
+<<<<<<< HEAD
+                        <form action="{{ route('store-reservation') }}">
+                            <div class="form-group">
+                                <label for="gym">Helyszín</label>
+                                <select class="form-control" name="gym" id="gym">
+                                    @foreach($data->gyms as $gym)
+                                        <option value="{{ $gym->gid }}">{{ $gym->gym_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="datetime">Időpont</label>
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control"/>
+=======
                     <form action="{{ route("store-booking") }}" method="post">
                             {{ csrf_field() }}
                             <div class="form-group">
@@ -15,17 +30,6 @@
                                     <span class="input-group-addon">
                                         Edzőterem
                                     </span>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="datetime">Időpont</label>
-                                <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control"/>
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
                                     
                                     <select class="form-control" name="gym" id="gym">
                                         <option value="">Nincs edzőterem választva</option>
@@ -50,11 +54,15 @@
                                         Dátum
                                     </span>
                                     <input type="text" class="form-control" name="rdate" readonly="readonly"/>
+>>>>>>> 9cf9e1281a0b255de38bed5d378e686d17c43912
                                     <span class="input-group-addon">
                                         <span class="glyphicon glyphicon-calendar"></span>
                                     </span>
                                 </div>
                             </div>
+<<<<<<< HEAD
+
+=======
                             @if ($errors->has('rdate'))
                                 <div class="alert alert-danger" role="alert">{{ $errors->first('rdate') }}</div>
                             @endif
@@ -87,6 +95,7 @@
                                 <a href="{{ URL::previous() }}" class="btn btn-default">Vissza</a>
                                 <button type="submit" class="btn btn-success">Mentés</button>
                             </div>
+>>>>>>> 9cf9e1281a0b255de38bed5d378e686d17c43912
                         </form>
                     </div>
                 </div>
@@ -94,6 +103,17 @@
         </div>
     </div>
 @stop
+<<<<<<< HEAD
+@section('header')
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+@stop
+@section('footer')
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+=======
 @section("scripts")
 <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
@@ -109,4 +129,5 @@
         });
     });
 </script>
+>>>>>>> 9cf9e1281a0b255de38bed5d378e686d17c43912
 @stop

@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Input;
 
 class GymController extends Controller
 {
+    
+    public function __contruct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $gyms = GymService::getGymList();
