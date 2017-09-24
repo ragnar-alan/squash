@@ -9,15 +9,18 @@ use Illuminate\Support\Facades\Input;
 
 class GymController extends Controller
 {
-    
-    public function __contruct()
+
+    private $gymService;
+
+    public function __construct(GymService $gymService)
     {
         $this->middleware('auth');
+        $this->gymService = $gymService;
     }
 
     public function index()
     {
-        $gyms = GymService::getGymList();
+        $gyms = $this->gymService->getGymList();
         return view("gym.gyms")->with(array("gyms" => $gyms));
     }
 
@@ -28,22 +31,22 @@ class GymController extends Controller
 
     public function store(Request $request)
     {
-        $result = GymService::createGym($request);
-        $gyms = GymService::getGymList();
+        $result = $this->gymService->createGym($request);
+        $gyms = $this->gymService->getGymList();
 
         return view("gym.gyms")->with(array("gyms" => $gyms, "savingResult" => $result));
     }
 
     public function edit($gid)
     {
-        $gym = GymService::getGym($gid);
+        $gym = $this->gymService->getGym($gid);
         return view("gym.gym-edit")->with(array("gym" => $gym));
     }
 
     public function save(Request $request)
     {
-        $result = GymService::updateGym($request);
-        $gyms = GymService::getGymList();
+        $result = $this->gymService->updateGym($request);
+        $gyms = $this->gymService->getGymList();
         return view("gym.gyms")->with(array("gyms" => $gyms, "savingResult" => $result));
     }
 }

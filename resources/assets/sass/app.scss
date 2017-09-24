@@ -2,11 +2,9 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
-// Variables
-@import "variables";
-
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "node_modules/eonasdan-bootstrap-datetimepicker/src/sass/_bootstrap-datetimepicker.scss";
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import "~eonasdan-bootstrap-datetimepicker-npm/src/sass/bootstrap-datetimepicker-build.scss";
+@import "~font-awesome/scss/font-awesome";
 
-@import "./main.scss";
+@import "main";

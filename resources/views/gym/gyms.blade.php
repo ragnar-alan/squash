@@ -34,8 +34,11 @@
                                         <td>{{ $gym->discount_type }}</td>
                                         <td>{{ $gym->created_at->format("Y-m-d H:i") }}</td>
                                         <td>
-                                            <a href="{{ route('edit-gyms', $gym->gid) }}" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Terem hozzáadása">
-                                                <i class="glyphicon glyphicon-pencil"></i>
+                                            <a href="{{ route('details-gyms', $gym->gid) }}" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Terem részletei">
+                                                <i class="fa fa-info"></i>
+                                            </a>
+                                            <a href="{{ route('edit-gyms', $gym->gid) }}" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Terem szerkesztése">
+                                                <i class="fa fa-pencil"></i>
                                             </a>
                                         </td>
                                     </tr>

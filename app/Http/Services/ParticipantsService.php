@@ -12,9 +12,9 @@ use App\Http\Models\Participants;
 
 class ParticipantsService
 {
-    public static function addUsersToReservation($request, $reservation_id) {
+    public function addUsersToReservation($request, $reservation_id) {
         foreach($request->participants as $uid){
-            $result = static::addParticipants($uid, $reservation_id);
+            $result = $this->addParticipants($uid, $reservation_id);
             if (!$result) {
                 return false;
             }
@@ -22,7 +22,7 @@ class ParticipantsService
         return true;
     }
 
-    public static function addParticipants($uid, $reservation_id)
+    public function addParticipants($uid, $reservation_id)
     {
         $participants = new Participants();
         $participants->uid = $uid;

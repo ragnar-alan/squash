@@ -12,12 +12,12 @@ use App\Http\Models\Gyms;
 
 class GymService
 {
-    public static function getGymList()
+    public function getGymList()
     {
         return Gyms::whereNull('deleted_at')->get();
     }
 
-    public static function createGym($request)
+    public function createGym($request)
     {
         $gym = new Gyms();
         $gym->gym_name = $request->name;
@@ -30,16 +30,16 @@ class GymService
         $gym->save();
     }
 
-    public static function getGym($gid)
+    public function getGym($gid)
     {
         return Gyms::whereNull('deleted_at')
-            ->where('gid',$gid)
+            ->where('gid', $gid)
             ->first();
     }
 
-    public static function updateGym($gym)
+    public function updateGym($gym)
     {
-        $oriGym = Gyms::where('gid',$gym->gid)->first();
+        $oriGym = Gyms::where('gid', $gym->gid)->first();
 
         $oriGym->gym_name = $gym->name;
         $oriGym->city = $gym->city;

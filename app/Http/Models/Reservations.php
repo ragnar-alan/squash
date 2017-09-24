@@ -11,7 +11,7 @@ class Reservations extends Model
     use SoftDeletes;
 
     protected $primaryKey = 'rid';
-    protected $table = "Reservations";
+    protected $table = "reservations";
     protected $dates = ['deleted_at'];
     public $timestamps = true;
 

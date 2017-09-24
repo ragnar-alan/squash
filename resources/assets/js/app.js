@@ -5,9 +5,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+require('./jquery');
 require('./bootstrap');
 require('./main');
-require('./jquery');
 //require('./node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js')
 
 window.Vue = require('vue');

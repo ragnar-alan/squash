@@ -22,6 +22,7 @@
                                 <th>Pálya száma</th>
                                 <th>Edzés időpontja</th>
                                 <th>Létrehozva</th>
+                                <th>Műveletek</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -32,6 +33,9 @@
                                         <td>{{ $reservation->court_number }}</td>
                                         <td>{{ $reservation->rdate }}</td>
                                         <td>{{ $reservation->created_at->format("Y-m-d H:i") }}</td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-open"></span>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -9,7 +9,7 @@
                         Bérlet hozzáadása
                     </div>
                     <div class="panel-body">
-                        <form action="{{ route('save-session-pass') }}" method="post">
+                        <form action="{{ route('save-season-pass') }}" method="post">
                             {{ csrf_field() }}
                             <div class="input-group">
                                 <span class="input-group-addon">Bérlet neve</span>
@@ -26,7 +26,7 @@
                                 <div class="col-lg-6">
                                     <div class="input-group">
                                         <span class="input-group-addon">Ára</span>
-                                        <input class="form-control" name="street" type="number" placeholder="29500" required>
+                                        <input class="form-control" name="full_price" type="number" placeholder="29500" required>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                 <div class="col-lg-12">
                                     <div class="input-group">
                                         <span class="input-group-addon">Edzőterem</span>
-                                        <select class="form-control">
+                                        <select class="form-control" name="gym">
                                         @if (!empty($gyms) && count($gyms) > 0)
                                             <option>Válassz edzőtermet</option>
                                             

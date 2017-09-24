@@ -8,7 +8,7 @@
                     <div class="panel-heading clearfix">
                         <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Bérletek</h4>
                         <div class="input-group pull-right">
-                            <a href="{{ route('create-session-pass') }}" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Bérlet hozzáadása">
+                            <a href="{{ route('create-season-pass') }}" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Bérlet hozzáadása">
                                 <i class="glyphicon glyphicon-plus"></i>
                             </a>
                         </div>
@@ -18,20 +18,22 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Hely neve</th>
-                                <th>Pályák száma</th>
-                                <th>Kedvezmény típusa/i</th>
+                                <th>Bérlet neve</th>
+                                <th>Edzőterem</th>
+                                <th>Alkalmak</th>
                                 <th>Létrehozva</th>
                             </tr>
                             </thead>
                             <tbody>
+                                @foreach($passes as $pass)
                                     <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <th scope="row">{{ $pass->tid }}</th>
+                                        <td>{{ $pass->ticket_name }}</td>
+                                        <td>{{ $pass->gym }}</td>
+                                        <td>{{ $pass->occasions }}</td>
+                                        <td>{{ $pass->created_at }}</td>
                                     </tr>
+                                @endforeach
                             </tbody>
                         </table>
 
