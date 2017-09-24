@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Gym;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Services\GymService;
-use Illuminate\Support\Facades\Input;
 
 class GymController extends Controller
 {
@@ -48,5 +47,11 @@ class GymController extends Controller
         $result = $this->gymService->updateGym($request);
         $gyms = $this->gymService->getGymList();
         return view("gym.gyms")->with(array("gyms" => $gyms, "savingResult" => $result));
+    }
+
+    public function details($gid)
+    {
+        $gym = $this->gymService->getGym($gid);
+        return view("gym.gym", compact("gym"));
     }
 }

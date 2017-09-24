@@ -14,4 +14,9 @@ class Gyms extends Model
     protected $table = "gyms";
     protected $dates = ['deleted_at'];
     public $timestamps = true;
+
+    public function scopeActive($query)
+    {
+        return $query->whereNull("deleted_at");
+    }
 }

@@ -37,7 +37,7 @@
                                 <span class="input-group-addon">
                                     Bérlet
                                 </span>
-                                    <select class="form-control" name="ticket" id="ticket">
+                                    <select class="form-control" name="ticket_id" id="ticket">
                                         <option value="">Nincs bérlet választva</option>
                                     </select>
                                 </div>

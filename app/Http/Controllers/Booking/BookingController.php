@@ -35,7 +35,7 @@ class BookingController extends Controller
         if (!$result) {
             return redirect()->back();
         }
-        return view("booking.book")->with("datas", $data);
+        return view("booking.book-list")->with("datas", $data);
     }
 
     public function getReservations() {
