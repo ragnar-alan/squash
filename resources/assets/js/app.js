@@ -8,7 +8,7 @@
 require('./jquery');
 require('./bootstrap');
 require('./main');
-//require('./node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js')
+//require('~/node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js');
 
 window.Vue = require('vue');
 

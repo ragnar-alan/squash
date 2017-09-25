@@ -21,4 +21,18 @@ class UserService
     public static function getUsers() {
         return Users::active()->get();
     }
+
+    public function getParticipants($users)
+    {
+        $ids = $this->getUserIds($users);
+        return Users::whereIn("id", $ids)->get();
+    }
+
+    private function getUserIds($userIds) {
+        $ids = [];
+        foreach ($userIds as $id) {
+            $ids[]= $id->uid;
+        }
+        return $ids;
+    }
 }

@@ -51,6 +51,15 @@ class BookingService
 
     public function getReservations()
     {
-        return Reservations::active()->get();
+        return Reservations::active()
+            ->get();
+    }
+
+    public function getReservation($rid)
+    {
+        return Reservations::active()
+            ->valid()
+            ->where("rid", $rid)
+            ->first();
     }
 }

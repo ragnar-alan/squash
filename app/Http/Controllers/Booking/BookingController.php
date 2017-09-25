@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Booking;
 
+use App\Http\Services\ParticipantsService;
+use App\Http\Services\UserService;
 use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -14,12 +16,16 @@ class BookingController extends Controller
 
     private $bookingService;
     private $seasonPassService;
+    private $participantsService;
+    private $userService;
 
-    public function __construct(BookingService $bookingService, SeasonPassService $seasonPassService)
+    public function __construct(BookingService $bookingService, SeasonPassService $seasonPassService, ParticipantsService $participantsService, UserService $userService)
     {
         $this->middleware('auth');
         $this->bookingService = $bookingService;
         $this->seasonPassService = $seasonPassService;
+        $this->participantsService = $participantsService;
+        $this->userService = $userService;
     }
 
     public function book()
@@ -30,21 +36,28 @@ class BookingController extends Controller
 
     public function store(BookingRequest $request)
     {
-        $data = $this->bookingService->getDatasToReservationForm();
         $result = $this->bookingService->createReservation($request);
+        $reservations = $this->bookingService->getReservations();
         if (!$result) {
             return redirect()->back();
         }
-        return view("booking.book-list")->with("datas", $data);
+        return view("booking.book-list")->with("reservations", $reservations);
     }
 
     public function getReservations() {
-        $data = $this->bookingService->getReservations();
-        return view("booking.book-list")->with("datas", $data);
+        $reservations = $this->bookingService->getReservations();
+        return view("booking.book-list")->with("reservations", $reservations);
     }
 
     public function getSeasonPassForGym(Request $request)
     {
         return $this->seasonPassService->getSeasonPass($request->gym);
+    }
+
+    public function details($rid)
+    {
+        $reservation = $this->bookingService->getReservation($rid);
+        $participants = $this->userService->getParticipants($this->participantsService->getParticipants($rid));
+        return view("booking.book-detail")->with(array("reservation" => $reservation, "participants" => $participants));
     }
 }

@@ -66,7 +66,7 @@
                                     <span class="input-group-addon">
                                         Résztvevők
                                     </span>
-                                    <select multiple="multiple" class="form-control" name="participants[]">
+                                    <select multiple="multiple" class="form-control" id="participants" name="participants[]">
                                         @foreach($datas->users as $user)
                                             <option value="{{ $user->id }}">{{ $user->name }} </option>
                                         @endforeach
@@ -99,6 +99,7 @@
 @section("scripts")
     <script type="text/javascript" src="{{ asset('js/moment.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/select2.full.js') }}"></script>
     <script>
         //option.format("YYYY-MM-DD HH:mm");
         $(function () {
@@ -127,6 +128,9 @@
                 }
                 $('#ticket').html(option);
             });
+        });
+        $(document).ready(function() {
+            $('#participants').select2();
         });
 
     </script>
