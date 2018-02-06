@@ -39,6 +39,12 @@
                                 </span>
                                     <select class="form-control" name="ticket_id" id="ticket">
                                         <option value="">Nincs bérlet választva</option>
+                                        @foreach($datas->passes as $pass)
+
+                                            <option value="{{ $pass->getSeasonPass()->tid }}">
+                                                {{ $pass->getSeasonPass()->ticket_name }} - {{ $pass->getOccasionsLeft() }} alkalom van hátra
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -122,9 +128,9 @@
             })
             .done(function( tickets ) {
                 var option = '<option value="">Nincs bérlet választva</option>';
-
+                console.log(tickets);
                 for (var i=0;i<tickets.length;i++){
-                    option += '<option value="'+ tickets[i].tid + '">' + tickets[i].ticket_name + '</option>';
+                    option += '<option value="'+ tickets[i].tid + '">' + tickets[i].ticket_name + ' - ' + tickets[i].occasions_left + ' alkalom van hátra</option>';
                 }
                 $('#ticket').html(option);
             });

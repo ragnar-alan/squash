@@ -48,6 +48,7 @@ class GymService
         $oriGym->number = $gym->number;
         $oriGym->number_of_courts = $gym->courts;
         $oriGym->discount_type = $gym->discount;
+        //@TODO when u update gym name don't forget about update season passes too (names)
         return $oriGym->save();
     }
 }

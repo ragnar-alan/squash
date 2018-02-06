@@ -27,11 +27,11 @@
                             <tbody>
                                 @foreach($passes as $pass)
                                     <tr>
-                                        <th scope="row">{{ $pass->tid }}</th>
-                                        <td>{{ $pass->ticket_name }}</td>
-                                        <td>{{ $pass->gym }}</td>
-                                        <td>{{ $pass->occasions }}</td>
-                                        <td>{{ $pass->created_at }}</td>
+                                        <th scope="row">{{ $pass->getSeasonPass()->tid }}</th>
+                                        <td>{{ $pass->getSeasonPass()->ticket_name }}</td>
+                                        <td>{{ $pass->getSeasonPass()->gym }}</td>
+                                        <td>{{ $pass->getOccasionsLeft() }}</td>
+                                        <td>{{ $pass->getSeasonPass()->created_at }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
