@@ -22,7 +22,7 @@ class SeasonPassController extends Controller
 
     public function getSeasonpass()
     {
-        $passes = $this->sessionPassService->getSeasonPasses();
+        $passes = $this->sessionPassService->getSeasonPasses(false);
         return view("seasonpass.seasonpass-list")->with(array("passes" => $passes));
     }
 
@@ -35,8 +35,10 @@ class SeasonPassController extends Controller
     public function store(Request $request)
     {
         $result = $this->sessionPassService->createSessoionPass($request);
-        $passes = $this->sessionPassService->getSeasonPasses();
+        $passes = $this->sessionPassService->getSeasonPasses(false);
 
         return view("seasonpass.seasonpass-list")->with(array("passes" => $passes));
     }
+
+    //@TODO make new action like more info and edit if it's possible
 }

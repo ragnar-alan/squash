@@ -3,10 +3,6 @@
 namespace App\Http\Services;
 
 use App\Http\Models\Reservations;
-use App\Http\Models\Gyms;
-use App\Http\Services\GymService;
-use App\Http\Services\UserService;
-use App\Http\Services\ParticipantsService;
 use stdClass;
 
 class BookingService
@@ -14,13 +10,15 @@ class BookingService
 
     private $userService;
     private $gymService;
+    private $seasonPassService;
     private $participantService;
 
-    public function __construct(UserService $userService, GymService $gymService, ParticipantsService $participantService)
+    public function __construct(UserService $userService, GymService $gymService, ParticipantsService $participantService, SeasonPassService $seasonPassService)
     {
         $this->userService = $userService;
         $this->gymService = $gymService;
         $this->participantService = $participantService;
+        $this->seasonPassService = $seasonPassService;
     }
 
 
@@ -29,6 +27,7 @@ class BookingService
         
         $data->gyms = $this->gymService->getGymList();
         $data->users = $this->userService->getUsers();
+        $data->passes = $this->seasonPassService->getSeasonPasses();
         return $data;
     }
 

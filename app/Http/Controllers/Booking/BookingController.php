@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Booking;
 use App\Http\Services\ParticipantsService;
 use App\Http\Services\UserService;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Http\Services\BookingService;
@@ -51,7 +52,7 @@ class BookingController extends Controller
 
     public function getSeasonPassForGym(Request $request)
     {
-        return $this->seasonPassService->getSeasonPass($request->gym);
+        return $this->seasonPassService->getSeasonPassesByGym($request->gym);
     }
 
     public function details($rid)
