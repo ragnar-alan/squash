@@ -26,7 +26,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($datas as $reservation)
+                                @foreach($reservations as $reservation)
+
                                     <tr>
                                         <th scope="row">{{ $reservation->rid }}</th>
                                         <td>{{ $reservation->gym }}</td>
@@ -34,7 +35,9 @@
                                         <td>{{ $reservation->rdate }}</td>
                                         <td>{{ $reservation->created_at->format("Y-m-d H:i") }}</td>
                                         <td>
-                                            <span class="glyphicon glyphicon-open"></span>
+                                            <a href="{{ route('details-booking', $reservation->rid) }}" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Foglalás részletei">
+                                                <i class="fa fa-info"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -23,6 +23,7 @@ Route::get('auth/google/callback', 'GoogleController@handleProviderCallback');
 Route::get('/booking/create', 'Booking\BookingController@book')->name('create-booking');
 Route::post('/booking/save', 'Booking\BookingController@store')->name('store-booking');
 Route::get('/booking/list', 'Booking\BookingController@getReservations')->name('list-booking');
+Route::get('/booking/details/{id}', 'Booking\BookingController@details')->name('details-booking');
 Route::post('/season-pass/getpass', 'Booking\BookingController@getSeasonPassForGym')->name('get-pass');
 
 //Gyms

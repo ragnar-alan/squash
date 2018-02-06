@@ -29,4 +29,9 @@ class ParticipantsService
         $participants->reservation_id = $reservation_id;
         return $participants->save();
     }
+
+    public function getParticipants($rid)
+    {
+        return Participants::where("reservation_id", $rid)->select("uid")->get();
+    }
 }

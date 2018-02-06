@@ -32,7 +32,7 @@ class GymService
 
     public function getGym($gid)
     {
-        return Gyms::whereNull('deleted_at')
+        return Gyms::active()
             ->where('gid', $gid)
             ->first();
     }
