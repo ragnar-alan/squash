@@ -40,3 +40,8 @@ Route::get('/season-pass/create', 'SeasonPass\SeasonPassController@create')->nam
 Route::post('/season-pass/save', 'SeasonPass\SeasonPassController@store')->name('save-season-pass');
 Route::post('/season-pass/details/{id}', 'SeasonPass\SeasonPassController@details')->name('details-season-pass');
 
+//Google
+//Route::get('glogin', array('as'=>'glogin','uses'=>'UserController@googleLogin')) ;
+Route::get('/google-login', 'GoogleController@googleLogin')->name('google-login');
+Route::get('google-user',array('as'=>'user.glist','uses'=>'UserController@listGoogleUser')) ;
+

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "squash-174013",
+  "private_key_id": "db0bb681fe8758504903ee6ea79f9b4f01da109b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCjTcvcnHHkWQxQ\ngZQJJsrB0k8HJi/1f0avhskg8X6j7DxKeaxyXc2NloFWmcJs6/fj6OmTRv9GE3M0\nnXE+VYKs1HFCLddjysXsbLfDINxL4EgRpBQ0WI8lpUJhpQViP36Ux1+Q7XjKoeks\nbiq1DI7tOORRCcgzhGRW/E2paf1fy6UvNPOpfDT+ySAp9LfbrznZgtZZq7izA6Ff\nQuCI5mnxXIHNtRP4fr/hB0085wEe9ynOhAFt5vB3LWx9o7W73DEDsaI9vMcXlSts\nFhDin1Qlz6Cw3NMTGbxoqPmRy091u0d3iOsN8tlcm/MX+Z6Sczc5nGhiKR0qRU0B\nei2A+yGvAgMBAAECggEAFgW5xkh6u3aeyISQ+CL5GOZJrgciVJMTbzxYB09J6sVC\n5DBAZzPrMnrnekxGAfZYea3BQhFC/6pD0QaibOuPMct8cpZIA7cmtdl7dp8J1lmq\nnmZoKx7+Pu9oYk6kyTkS0vGIG71Kmtj23v0EWWIWLDuN3rfY/cmO1oQz3PLkLnTK\n6S7dVHGOxgeg1IHLHNJt39zIG/UbFUllXxLj37HXZL62Z4ebZFwCixaSj6esTRU7\nHVd9aYuMx4BFObq/bvsP1MSwgf7mmGQyM7nGLSfTCef8qXuC76GDDB7TSI3dAmNP\nrJxES7zRXnAxTpamvrfju6WKszvXqvBk8hxhW0SIIQKBgQDSCqI6r9QlRv4Htuig\nzqY1yX9XMTGuuZZIthPv5mcZc7EvY49fc0/gz9+902zhseHLSGOGMpxYN5ZCykap\n52ugGqRgYqVqTvp40ue5uQqXZS0hZT312a4Lbw0/vH7mY6ZGXeDuhUz6h7tkbZZ+\nO3RDyjvOkuX6bh/XmYMcmsQodwKBgQDHCS2PHFTzv7flLQw3iGKO272EHmtaI+9i\nQ5BLr7bIC3ucYufOtNH7EvncvoORH8Idn7cU88ad9ARmpQ4cDv6IdQ65/HoeaWZP\na+/kmseJqiCn670XpO3JQlD0Eo6Uvmtg6+RTMwz07NDOqE2JgQkxFnknX0O/L4td\nHjzUxsLWiQKBgFB04k+4qnrdBtHNrq5qeiCAXtb3cSCM1pRjqp9qknOdbXHJoVHe\nyepDtmDwa/TIPsWvpO/y0xC3ukc7VHYgv4lEq1KAdvyR5EAECd+KkhQMHY19So6y\nI4kdsOWJPtLhuP+bVl4HkcUl2RJPKCaSf6a4ANDQVGfpZykfFKoQXrNhAoGBAJuy\np0wTSrVe3XlOswbiDs9YQDmRHkNmZwYEemVqsF5u9SSSDmoZ80UoRAOVmRA2usA3\nx52BUXcQgzzUk2QJqr2ObJW7VsBhjSJF+mRnW/5p8p/JfqN3ZngRA4ja12SuTQuF\nnJglEFasxm9TI0yUf19CCEZvdGyjwa53T/jW/2WZAoGABYlb1vWk7RJWg7j2GCEb\nk8gHCmk1NapKrkOJdjgq2aIJRYmViTvKoseXKZa+ilJgLdZ0SmbA6JDOj19rN8Pf\nyrPSSxOk9GA9tg8eHVnesC99Dg9zaAJVlShs22JUCL1eEBhhWnm2OTc5tyn4e9Gm\n/pNceWT/WhVqb7JW+p2cjyI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "squashtimemanagement@squash-174013.iam.gserviceaccount.com",
+  "client_id": "103263489142397720588",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/squashtimemanagement%40squash-174013.iam.gserviceaccount.com"
+}

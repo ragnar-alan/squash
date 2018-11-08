@@ -24,8 +24,11 @@ class UserService
 
     public function getParticipants($users)
     {
-        $ids = $this->getUserIds($users);
-        return Users::whereIn("id", $ids)->get();
+        if (is_array($users)) {
+            return Users::whereIn("id", $users)->get();
+        }
+        $uids = $this->getUserIds($users);
+        return Users::whereIn("id", $uids)->get();
     }
 
     private function getUserIds($userIds) {

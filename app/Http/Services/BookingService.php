@@ -12,13 +12,15 @@ class BookingService
     private $gymService;
     private $seasonPassService;
     private $participantService;
+    private $googleService;
 
-    public function __construct(UserService $userService, GymService $gymService, ParticipantsService $participantService, SeasonPassService $seasonPassService)
+    public function __construct(UserService $userService, GymService $gymService, ParticipantsService $participantService, SeasonPassService $seasonPassService, GoogleService $googleService)
     {
         $this->userService = $userService;
         $this->gymService = $gymService;
         $this->participantService = $participantService;
         $this->seasonPassService = $seasonPassService;
+        $this->googleService = $googleService;
     }
 
 
@@ -40,7 +42,9 @@ class BookingService
         $reservation->rdate = $request->rdate;
         $reservation_result = $reservation->save();
 
-        
+        $participants = $this->userService->getParticipants($request->get("participants"));
+        $this->googleService->createCalendarEvents($participants, $reservation);
+
         $participants_result = $this->participantService->addUsersToReservation($request, $reservation->rid);
         if ($reservation_result == true && $participants_result == true ) {
             return true;

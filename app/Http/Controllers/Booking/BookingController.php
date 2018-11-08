@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Booking;
 
+use App\Http\Services\GoogleService;
 use App\Http\Services\ParticipantsService;
 use App\Http\Services\UserService;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Http\Services\BookingService;
@@ -38,14 +38,15 @@ class BookingController extends Controller
     public function store(BookingRequest $request)
     {
         $result = $this->bookingService->createReservation($request);
-        $reservations = $this->bookingService->getReservations();
         if (!$result) {
             return redirect()->back();
         }
+
+        $reservations = $this->bookingService->getReservations();
         return view("booking.book-list")->with("reservations", $reservations);
     }
 
-    public function getReservations() {
+    public function getReservations(Request $request) {
         $reservations = $this->bookingService->getReservations();
         return view("booking.book-list")->with("reservations", $reservations);
     }

@@ -34,4 +34,12 @@ class ParticipantsService
     {
         return Participants::where("reservation_id", $rid)->select("uid")->get();
     }
+
+    public function getParticipantsInArray($rid)
+    {
+        return Participants::select("uid")
+            ->where("reservation_id", $rid)
+            ->get()
+            ->toArray();
+    }
 }

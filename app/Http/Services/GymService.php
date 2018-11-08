@@ -51,4 +51,9 @@ class GymService
         //@TODO when u update gym name don't forget about update season passes too (names)
         return $oriGym->save();
     }
+
+    public function getGymByName($name)
+    {
+        return Gyms::where("gym_name", $name)->first();
+    }
 }
