@@ -20,3 +20,6 @@ Homestead.yaml
 npm-debug.log
 .env
 *.orig
+composer.lock
+/resources
+/public
